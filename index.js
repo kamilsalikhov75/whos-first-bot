@@ -26,17 +26,17 @@ bot.on("message", (message) => {
     bot.sendMessage(chatId, "Отправь имена через пробел");
     return;
   }
-  if (text.match(/^((\s?)+[А-ЯЁа-яё]+(\s?)+)+$/)) {
+  if (text.match(/^((\s?)+([А-ЯЁ][а-яё])+(\s?)+)+$/)) {
     const players = message.text.split(" ");
     const chatId = message.chat.id;
-    if (players.length < 2) {
-      bot.sendMessage(chatId, "Введи больше двух имен");
-      return;
-    }
+    // if (players.length < 2) {
+    //   bot.sendMessage(chatId, "Введи больше двух имен");
+    //   return;
+    // }
     players.map((player) => player.trim());
     const playerNumber = Math.floor(Math.random() * players.length);
     bot.sendMessage(chatId, `Первый игрок: ${players[playerNumber]}`);
     return;
   }
-  bot.sendMessage(chatId, "Я не понимаю 😞");
+  // bot.sendMessage(chatId, "Я не понимаю 😞");
 });
