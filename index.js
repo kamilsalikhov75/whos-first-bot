@@ -26,7 +26,7 @@ bot.on("message", (message) => {
     bot.sendMessage(chatId, "Отправь имена через пробел");
     return;
   }
-  if (text.match(/^((\s?)+([А-ЯЁ][а-яё])+(\s?)+)+$/)) {
+  if (text.match(/^((\s?)+([А-ЯЁ][а-яё]+)+(\s?)+)+$/)) {
     const players = message.text.split(" ");
     const chatId = message.chat.id;
     // if (players.length < 2) {
